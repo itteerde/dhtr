@@ -7,10 +7,10 @@
             "name": "Umbratica"
         }
     ],
-    "version": "0.0.4",
+    "version": "0.0.5",
     "compatibility":{
         "minimum": "13",
-        "verified": "13.347"
+        "verified": "13.351"
     },
     "scripts":[
         "scripts/dhtr.js"
@@ -68,7 +68,7 @@
                 "type": "system",
                 "compatibility": {
                     "minimum": "1.0.0",
-                    "verified": "1.0.0"
+                    "verified": "1.3.2"
                 },
                 "manifest": "https://github.com/Foundryborne/daggerheart/releases/latest/download/system.json"
             }
