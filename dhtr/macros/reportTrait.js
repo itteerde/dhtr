@@ -1,4 +1,3 @@
-
 const keys = new Map([
     ['agility', 'Agility'],
     ['finesse', 'Finesse'],
@@ -30,9 +29,10 @@ new foundry.applications.api.DialogV2({
         else {
             console.log(`User picked option: ${keys.get(result)}`);
 
+            // https://foundryvtt.com/api/classes/foundry.documents.Actor.html
             let actors = game.folders.getName("The Party").contents.filter(a => a.type === "character");
-            let chatMessageContent = `<div style="color: white;"><div style="font-size: large; font-weight: bold;">${keys.get(result)}</div><table>`;
 
+            let chatMessageContent = `<div style="color: white;"><div style="font-size: large; font-weight: bold;">${keys.get(result)}</div><table>`;
             actors.forEach(a => {
                 chatMessageContent += `<tr><td>${a.name}</td><td>${a.getRollData().traits[result].value}</td></tr>`;
             });
