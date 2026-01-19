@@ -15,6 +15,7 @@ for (const key of keys.keys()) {
     `;
 }
 
+// https://foundryvtt.com/api/classes/foundry.applications.api.DialogV2.html
 new foundry.applications.api.DialogV2({
     window: { title: "Traits" },
     content: dialogContent,
