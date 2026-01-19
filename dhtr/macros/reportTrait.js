@@ -39,6 +39,7 @@ new foundry.applications.api.DialogV2({
 
             chatMessageContent += `</table></div>`;
 
+            // https://foundryvtt.com/api/classes/foundry.documents.ChatMessage.html
             ChatMessage.create({ content: chatMessageContent });
         }
     }
