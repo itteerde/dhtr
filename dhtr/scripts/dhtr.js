@@ -273,7 +273,7 @@ Hooks.on("ready", function () {
         }
     }
 
-    //CONFIG.statusEffects.push({ icon: 'modules/tablerules/icons/statuses/hidden.svg', id: 'hidden', label: 'Hidden' });
+    //CONFIG.statusEffects.push({ icon: 'modules/dhtr/icons/statuses/Blood_Puddle_A1_1x1.png', id: 'gore', label: 'gore' });
 });
 
 console.log(`Tablerules has been loaded (${performance.now() - start_time}ms).`);
