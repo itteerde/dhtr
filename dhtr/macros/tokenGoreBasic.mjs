@@ -9,6 +9,6 @@ for (const token of tokens) {
         await token.document.setFlag("dhtr", "texture.src", null)
     } else {
         await token.document.setFlag("dhtr", "texture.src", token.document.texture.src);
-        await token.document.update({ "texture.src": "modules/dhtr/icons/statuses/Blood_Puddle_A1_1x1.png" });
+        await token.document.update({ "texture.src": "modules/dhtr/icons/tokens/Blood_Puddle_A1_1x1.png" });
     }
 };
