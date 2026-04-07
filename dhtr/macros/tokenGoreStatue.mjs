@@ -15,9 +15,9 @@ for (const token of tokens) {
         };
         await token.document.setFlag(SCOPE, FLAG_NAME, flag);
         let data = {
-            "texture.src": "modules/dhtr/icons/tokens/Blood_Puddle_w_Body.png",
-            "texture.scaleX": token.document.texture.scaleX * 1.5,
-            "texture.scaleY": token.document.texture.scaleY * 1.5
+            "texture.src": "modules/dhtr/icons/tokens/Rubble_Pile_Stone_Earthy_A3_2x2.png",
+            "texture.scaleX": token.document.texture.scaleX * 0.5,
+            "texture.scaleY": token.document.texture.scaleY * 0.5
         }
         await token.document.update(data);
     }
