@@ -6,27 +6,29 @@ for (let i = 0; i < tokensToBeModified.length; i++) {
     if (tokensToBeModified[i].document.light.dim === 0) {
         await tokensToBeModified[i].document.update({
             light: {
-                alpha: 0.2,
-                angle: 360,
-                bright: bright_range,
-                coloration: 1,
-                dim: dim_range,
-                gradual: true,
-                luminosity: 0.5,
-                saturation: 0,
-                contrast: 0.25,
-                shadows: 0,
-                animation: {
-                    speed: 1,
-                    intensity: 2,
-                    reverse: false,
-                    type: "torch",
+                "negative": false,
+                "priority": 0,
+                "alpha": 0.2,
+                "angle": 360,
+                "bright": 20,
+                "color": "#fa9200",
+                "coloration": 1,
+                "dim": 40,
+                "attenuation": 1,
+                "luminosity": 0.5,
+                "saturation": 0,
+                "contrast": 0,
+                "shadows": 0,
+                "animation": {
+                    "type": "torch",
+                    "speed": 5,
+                    "intensity": 5,
+                    "reverse": false
                 },
-                darkness: {
-                    min: 0,
-                    max: 1,
-                },
-                color: "#f3e09b",
+                "darkness": {
+                    "min": 0,
+                    "max": 1
+                }
             },
         });
     } else {
