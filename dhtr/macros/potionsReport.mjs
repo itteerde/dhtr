@@ -4,21 +4,25 @@ let chatMessageContent = `
   <table>
     <tr>
       <th>Character</th>
-      <th><img width="40px" src="icons/consumables/potions/potion-tube-corked-red.webp"/></th>
-      <th><img width="40px" src="icons/consumables/potions/potion-tube-corked-green.webp"/></th>
+      <th><img width="20px" src="icons/consumables/potions/potion-tube-corked-red.webp"/></th>
+      <th><img width="20px" src="icons/consumables/potions/potion-tube-corked-green.webp"/></th>
+      <th><img width="20px" src="icons/consumables/potions/potion-bottle-labeled-medicine-capped-red-black.webp"/></th>
+      <th><img width="20px" src="assets/art/splash/Rations.png"/></th>
     </tr>
 `;
 
 for (const actor of actors) {
 
-    chatMessageContent += `
+  chatMessageContent += `
     <tr>
       <td>${actor.name.substring(0, 5)}</td>
       <td style="text-align: center;">${actor.items.find(i => i.name === 'Minor Health Potion') ? actor.items.find(i => i.name === 'Minor Health Potion').system.quantity : 0}</td>
       <td style="text-align: center;">${actor.items.find(i => i.name === 'Minor Stamina Potion') ? actor.items.find(i => i.name === 'Minor Stamina Potion').system.quantity : 0}</td>
+      <td style="text-align: center;">${actor.items.find(i => i.name === 'Vial of Darksmoke') ? actor.items.find(i => i.name === 'Vial of Darksmoke').system.quantity : 0}</td>
+      <td style="text-align: center;">${actor.items.find(i => i.name === 'Rations') ? actor.items.find(i => i.name === 'Rations').system.quantity : 0}</td>
     </tr>
   `;
-    //actor.items.filter(i=>i.name.includes("Potion")).forEach(p=>console.log({character: actor.name, item: p.name, count: p.system.quantity}))
+  //actor.items.filter(i=>i.name.includes("Potion")).forEach(p=>console.log({character: actor.name, item: p.name, count: p.system.quantity}))
 }
 
 chatMessageContent += `
@@ -29,15 +33,15 @@ chatMessageContent += `
 //ChatMessage.create({content: chatMessageContent})
 // https://foundryvtt.com/api/classes/foundry.applications.api.DialogV2.html
 new foundry.applications.api.DialogV2({
-    window: { title: "Potions" },
-    content: chatMessageContent,
-    buttons: [{
-        action: "choice",
-        label: "Report",
-        default: true,
-        callback: (event, button, dialog) => button.form.elements.choice
-    }],
-    submit: result => {
-        ChatMessage.create({ content: chatMessageContent })
-    }
+  window: { title: "Potions" },
+  content: chatMessageContent,
+  buttons: [{
+    action: "choice",
+    label: "Report",
+    default: true,
+    callback: (event, button, dialog) => button.form.elements.choice
+  }],
+  submit: result => {
+    ChatMessage.create({ content: chatMessageContent })
+  }
 }).render({ force: true });
